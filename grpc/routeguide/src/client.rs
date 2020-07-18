@@ -15,7 +15,9 @@ pub mod routeguide {
     tonic::include_proto!("routeguide");
 }
 
-async fn print_features(client: &mut RouteGuideClient<Channel>) -> Result<(), Box<dyn Error>> {
+async fn print_features(
+    client: &mut RouteGuideClient<Channel>,
+) -> Result<(), Box<dyn Error>> {
     let rectangle = Rectangle {
         lo: Some(Point {
             latitude: 400_000_000,
@@ -39,7 +41,9 @@ async fn print_features(client: &mut RouteGuideClient<Channel>) -> Result<(), Bo
     Ok(())
 }
 
-async fn run_record_route(client: &mut RouteGuideClient<Channel>) -> Result<(), Box<dyn Error>> {
+async fn run_record_route(
+    client: &mut RouteGuideClient<Channel>,
+) -> Result<(), Box<dyn Error>> {
     let mut rng = rand::thread_rng();
     let point_count: i32 = rng.gen_range(2, 100);
 
@@ -59,7 +63,9 @@ async fn run_record_route(client: &mut RouteGuideClient<Channel>) -> Result<(), 
     Ok(())
 }
 
-async fn run_route_chat(client: &mut RouteGuideClient<Channel>) -> Result<(), Box<dyn Error>> {
+async fn run_route_chat(
+    client: &mut RouteGuideClient<Channel>,
+) -> Result<(), Box<dyn Error>> {
     let start = time::Instant::now();
 
     let outbound = async_stream::stream! {
