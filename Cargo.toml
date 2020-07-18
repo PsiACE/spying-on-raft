@@ -2,4 +2,6 @@
 members = [
     "grpc/helloworld",
     "grpc/routeguide",
+    "raft/single-mem-node",
+    "raft/five-mem-node",
 ]
